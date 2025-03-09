@@ -37,8 +37,8 @@ export default function TeamCallviewer() {
   }, []);
 
   return (
-    <div className="positionRosterContainer flex flex-col w-full h-full p-4 ">
-      <h2>Forwards</h2>
+    <div className="positionRosterContainer flex flex-col w-full h-full overflow-y-auto p-4 ">
+      <h2 className="bg-amber-200 p-4">Forwards</h2>
 
       <ul className="positionList flex flex-wrap">
         {roster.forwards.length > 0 &&
