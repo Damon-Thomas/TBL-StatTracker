@@ -19,4 +19,90 @@ const playerInfo = async (id: number) => {
   }
 };
 
+interface Trophy {
+  default: string;
+  fr: string;
+}
+
+interface Season {
+  season: number;
+  leagueAbbrev: string;
+  goals: number;
+  assists: number;
+  points: number;
+}
+
+interface Award {
+  trophy: Trophy;
+  seasons: Season[];
+}
+
+interface City {
+  default: string;
+  cs: string;
+  fi: string;
+}
+
+interface Name {
+  default: string;
+  cs: string;
+  fi: string;
+}
+
+interface TeamName {
+  default: string;
+  fr: string;
+}
+
+interface Player {
+  awards: Award[];
+  birthCity: City;
+  birthCountry: string;
+  birthDate: string;
+  careerTotals: {
+    regularSeason: Record<string, any>;
+    playoffs: Record<string, any>;
+  };
+  currentTeamAbbrev: string;
+  currentTeamId: number;
+  currentTeamRoster: Record<string, any>[];
+  draftDetails: {
+    year: number;
+    teamAbbrev: string;
+    round: number;
+    pickOverall: number;
+  };
+  featuredStats: {
+    season: number;
+    regularSeason: Record<string, any>;
+  };
+  firstName: Name;
+  fullTeamName: TeamName;
+  headshot: string;
+  heightInCentimeters: number;
+  heightInInches: number;
+  heroImage: string;
+  inHHOF: number;
+  inTop100AllTime: number;
+  isActive: boolean;
+  last5Games: Record<string, any>[];
+  lastName: Name;
+  playerId: number;
+  playerSlug: string;
+  position: string;
+  seasonTotals: Season[];
+  shootsCatches: string;
+  shopLink: string;
+  sweaterNumber: number;
+  teamCommonName: TeamName;
+  teamLogo: string;
+  teamPlaceNameWithPreposition: TeamName;
+  twitterLink: string;
+  watchLink: string;
+  weightInKilograms: number;
+  weightInPounds: number;
+}
+
 export default playerInfo;
+
+export type { Player, Season };

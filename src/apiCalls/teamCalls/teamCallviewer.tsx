@@ -12,19 +12,14 @@ export default function TeamCallviewer() {
   function playerInfo(player: any) {
     return (
       <div className="playerInfoContainer">
-        {Object.entries(player).map(
-          ([key, value]) => (
-            console.log("key", key, "value", value),
-            (
-              <p key={player.id + key}>
-                {key} ={" "}
-                {typeof value === "object" && value !== null
-                  ? value.default
-                  : String(value)}
-              </p>
-            )
-          )
-        )}
+        {Object.entries(player).map(([key, value]) => (
+          <p key={player.id + key}>
+            {key} ={" "}
+            {typeof value === "object" && value !== null
+              ? value.default
+              : String(value)}
+          </p>
+        ))}
       </div>
     );
   }
